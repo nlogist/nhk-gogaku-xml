@@ -12,9 +12,10 @@ README.md は GitHub で編集するので，最初に pull をしてから push
 #!/bin/sh
 
 cd /path_to/nhk-gogaku-xml || exit;
+git pull origin master
+
 test -f xml-wget.sh && sh xml-wget.sh || echo "File doesn't exists"
 
-git pull origin master
 git add -A 
 git commit -am "`date '+%Y-%m-%d'` Updated files"
 git push -u origin master
