@@ -17,11 +17,18 @@ git pull origin master
 
 test -f xml-wget.sh && sh xml-wget.sh || echo "File doesn't exists"
 
-git add -A 
-git commit -am "`date '+%Y-%m-%d'` Updated files"
+git add -A
+
+# Set the date of Monday of this week
+# FreeBSD
+git commit -am "`date -v-sun -v+1d +'%Y-%m-%d'` Updated files"
+# Linux GNU coreutils
+# git commit -am "`date -d 'last sunday + 1 day' +'%Y-%m-%d'` Updated files"
+
 git push -u origin master
 ```
 NHK のサーバでは毎週月曜日10:00に更新が行われるので，その後に更新用スクリプトの起動を行います。ここでは1時間後の11:00に起動するようにcrontabに書いています。
+上のシェルスクリプトでは，月曜日以降であればいつ動作させても月曜日の日付になるように，日付の取得を行っています。
 ```
 % crontab -l
 0 11 * * 1 sh /path_to/nhk-gogaku-xml-gitupdate.sh
