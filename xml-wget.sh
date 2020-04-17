@@ -26,3 +26,4 @@ wget -x https://cgi2.nhk.or.jp/gogaku/st/xml/french/kouza2/listdataflv.xml
 wget -x https://cgi2.nhk.or.jp/gogaku/st/xml/spanish/kouza/listdataflv.xml
 wget -x https://cgi2.nhk.or.jp/gogaku/st/xml/spanish/kouza2/listdataflv.xml
 wget -x https://cgi2.nhk.or.jp/gogaku/st/xml/russian/kouza/listdataflv.xml
+wget -x https://cgi2.nhk.or.jp/gogaku/st/xml/russian/kouza2/listdataflv.xml
